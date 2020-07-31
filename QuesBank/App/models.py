@@ -4,4 +4,4 @@ from django.db import models
 class Data(models.Model):
     Questions=models.CharField(max_length=250)
     Teacher Name=models.CharField(max_length=30)
-    Question Bank=models.CharField(max_length=3000)
+    Question Bank=models.CharField(max_length=4000)
