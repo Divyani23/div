@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <br><br><br>
+    <center>
+      <h1>Question Paper</h1>
+      
+      {%if Student%}
+      <table border='10px'>
+        <thead>
+          <th>Question</th>
+          <th>Teacher</th>
+          <th>QuestionBank</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        {%for stu in Student%}
+        <tr>
+          <td>{{stu.Question}}</td>
+          <br><br>
+          <td>{{stu.Teacher}}</td>
+          <br><br>
+          <td>{{stu.QuestionBank}}</td>
+          <br><br>
+          <td><a class="btn btn-primary" href="/update/{{stu.id}}" role="button">Update</a></td>
+          <td><a class="btn btn-primary" href="/delete/{{stu.id}}" role="button">Delete</a></td>
+        </tr>
+        {%endfor%}
+        {%else%}
+        <h2>Questions not found</h2>
+        {%endif%}
+      </table>
+      <br><br>
+      <a class="btn btn-primary" href="/EI"role="button">Insert new Question</a>
+      </center>
+  </body>
+</html>
